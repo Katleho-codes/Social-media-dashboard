@@ -1,6 +1,6 @@
 const checkbox = document.querySelector(".checkbox");
 var element = document.body;
-checkbox.addEventListener("click", (e) => {
+checkbox.addEventListener("click", () => {
   if (checkbox.classList.contains("on")) {
     element.classList.toggle("dark-mode");
 
