@@ -8,7 +8,7 @@
 
 // Dark Mode 
 
-$VeryDarkBlue: hsl(230, 17%, 14%);
+$VeryDarkBlue: hwb(230 12% 84%);
 $VeryDarkBlue: hsl(232, 19%, 15%);
 $DarkDesaturatedBlue: hsl(228, 28%, 20%);
 $DesaturatedBlue: hsl(228, 34%, 66%);
@@ -26,18 +26,29 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Inter', sans-serif;
-    background-color: $White;
+    height: 100vh;
+    // background-color: $White;
 }
 
-.container {
-    width: 90%;
-    padding: 10px;
-    margin: auto;
+main {
+    // background-color: #1e202a;
+    height: 100%;
+
 }
 
 .content {
     height: 30vh;
-    background-color: #1e202a;
+    background-color: $VeryPaleBlue;
+    border-radius: 0 0 1.5rem 1.5rem;
+    position: relative;
+    width: 100%;
+    margin-top: 0;
+}
+
+.container {
+    width: 80%;
+    padding: 10px;
+    margin: auto;
 }
 
 .top_row {
@@ -45,30 +56,286 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+
+    h1 {
+        text-transform: capitalize;
+        color: $VeryDarkBlue;
+        font-weight: 700;
+        font-size: 2rem;
+        margin-bottom: 2px;
+    }
+
+    p,
+    span {
+        color: $DarkGrayishBlue;
+        font-weight: 700;
+        margin-top: 0;
+        margin-inline: 10px;
+    }
+
+    .switch_column {
+        display: flex;
+        align-items: center;
+    }
 }
+
+// Dark mode
+.dark-mode {
+    background-color: hsl(230, 17%, 14%);
+
+    .content {
+        background-color: hsl(230, 17%, 15%);
+    }
+
+    .top_row {
+
+        h1 {
+            color: $White;
+        }
+
+        span {
+            color: $DarkGrayishBlue;
+        }
+    }
+
+    .social_card,
+    .overview_card {
+        background-color: $DarkDesaturatedBlue;
+
+        .body_content {
+            .followers_count {
+                color: $White;
+            }
+        }
+    }
+
+    .overview_card {
+        .footer_content {
+            .view_count {
+                color: $White;
+            }
+        }
+    }
+
+    .social_card:hover,
+    .overview_card:hover {
+        background-color: $DesaturatedBlue;
+    }
+}
+
 
 .row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     position: relative;
-    top: 8em;
+    top: 2em;
+    margin-top: 0;
 }
 
-.col {
+.social_card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: $VeryPaleBlue;
+    padding: 1.4rem 1rem;
+    // width: 16.66%;
     width: 25%;
-    border: 1px solid red;
+    // border: 1px solid red;
     margin-left: 8px;
     margin-right: 8px;
+    text-align: center;
+    border-radius: .5rem;
+    cursor: pointer;
+
+    .header_content {
+        display: flex;
+        align-items: center;
+
+        .username {
+            color: $DarkGrayishBlue;
+            padding-left: 3px;
+            font-size: small;
+            font-weight: 700;
+        }
+    }
+
+    .body_content {
+        .followers_count {
+            color: $VeryDarkBlue;
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1rem auto 0;
+        }
+
+        .followers_text {
+            text-transform: uppercase;
+            letter-spacing: .2rem;
+            font-size: .8rem;
+            font-weight: 400;
+            margin-top: 0;
+            color: $DarkGrayishBlue;
+        }
+    }
+}
+
+.success_text {
+    font-size: small;
+    font-weight: 700;
+    color: #1EB589;
+}
+
+.error_text {
+    font-size: small;
+    font-weight: 700;
+    color: #DC414C;
+}
+
+
+// Overview
+.overview {
+    margin: 4rem 0 0 .4rem;
+    padding: 0;
+    width: 100%;
+
+    h2 {
+        color: $DarkGrayishBlue;
+        font-weight: 700;
+        position: relative;
+    }
+}
+
+.overview_row {
+    margin: 1rem auto;
+}
+
+.overview_card {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: $VeryPaleBlue;
+    padding: 1.4rem 1rem;
+    width: 25%;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-radius: .5rem;
+    cursor: pointer;
+
+    .header_content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+
+        .analytics_text {
+            font-size: 14px;
+            font-weight: 700;
+            color: $DarkGrayishBlue;
+        }
+    }
+
+    .footer_content {
+        margin-top: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .view_count {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: $VeryDarkBlue;
+        }
+
+    }
+
+}
+
+.social_card:hover,
+.overview_card:hover {
+    background-color: $LightGrayishBlue;
 }
 
 @media (max-width:800px) {
+    .container {
+        width: 90%;
+    }
+
+    .top_row {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+        h1 {
+            font-size: 1.5rem;
+        }
+
+        p,
+        span {
+            margin-inline: 0;
+        }
+
+        .switch_column {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
     .row {
         display: flex;
         flex-direction: column;
+        position: relative;
+        top: 0;
     }
 
     .col {
         width: 100%;
         margin: 10px auto;
     }
+
+    .overview_row {
+        margin: 0;
+    }
+
+    .overview {
+        margin: 0;
+    }
+}
+
+
+
+.checkbox::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 12px;
+    background-color: $VeryDarkBlue;
+    transition: width 200ms, height 200ms, transform 200ms, background-color 200ms;
+}
+
+.checkbox {
+    width: 52px;
+    height: 32px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    background-color: #1EB589;
+    border-radius: 24px;
+    border: none;
+    transition: border-color 200ms, background-color 200ms;
+    cursor: pointer;
+}
+
+.checkbox.on {
+    background-color: $DarkGrayishBlue;
+
+}
+
+.checkbox.on::before {
+    background-color: $LightGrayishBlue;
+    width: 24px;
+    height: 24px;
+    transform: translateX(18px);
+
 }
