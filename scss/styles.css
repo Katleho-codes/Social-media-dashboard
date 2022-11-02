@@ -131,6 +131,26 @@ main {
   color: #63687e;
 }
 
+.facebook-card {
+  border-top: 5px solid #4267B2;
+  border-radius: 5px 5px;
+}
+
+.twitter-card {
+  border-top: 5px solid #1DA1F2;
+  border-radius: 5px 5px;
+}
+
+.instagram-card {
+  border-top: 5px solid #c13584;
+  border-radius: 5px 5px;
+}
+
+.youtube-card {
+  border-top: 5px solid #FF0000;
+  border-radius: 5px 5px;
+}
+
 .success_text {
   font-size: small;
   font-weight: 700;
